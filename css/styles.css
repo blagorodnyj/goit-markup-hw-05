@@ -573,6 +573,7 @@ a .list-mediafooter {
 
 .over-thumb {
     position: relative;
+    overflow: hidden;
 }
 
 .overlay-thumb::after {
@@ -594,9 +595,7 @@ a .list-mediafooter {
     opacity: 1;
     transform: translateY(100%);
     color: var(--white);
-
-    transition: ;
-        
+    
 }
 
 .filter-link:hover,
@@ -606,6 +605,9 @@ a .list-mediafooter {
 
 .filter-link:hover .overlay-thumb::after {
     transform: translateY(0);
+    transition: transform 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+    
 }
 
 /* paragraph */
