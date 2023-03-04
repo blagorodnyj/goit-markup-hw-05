@@ -118,6 +118,7 @@ img {
     letter-spacing: 3%;
     text-decoration: none;
     text-transform: uppercase;
+    transition: color 250ms var(--timing-function);
 }
 
 .logo-dark:hover,
@@ -140,7 +141,8 @@ img {
     line-height: 1.33;
     letter-spacing: 3%;
     text-decoration: none;
-    text-transform: uppercase
+    text-transform: uppercase;
+    transition: color 250ms var(--timing-function);
 }
 
 .logo-light:hover,
@@ -179,6 +181,7 @@ img {
     font-size: 16px;
     line-height: 1.5;
     text-decoration: none;
+    transition: color 250ms var(--timing-function);
 }
 
 
@@ -514,6 +517,8 @@ a .list-mediafooter {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 4%;
+    transition: background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 
 .button:hover,
@@ -545,12 +550,13 @@ a .list-mediafooter {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 4%;
+    transition: background-color 250ms var(--timing-function),
+                box-shadow 250ms var(--timing-function);
 }
 
 
 .filter-btn:hover,
 .filter-btn:focus {
-    color: var(--white);
     background-color: var(--pressed-state);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -568,15 +574,27 @@ a .list-mediafooter {
     border-right: solid 1px var(--accent);
     border-bottom: solid 1px var(--accent);
     border-left: solid 1px var(--accent);
-    position: relative;
     }
 
-.over-thumb {
-    position: relative;
+
     overflow: hidden;
+
+
+.overlay-thumb {
+    transform: translateY(0%);
+    display: inline-block;
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+
+    background-color: var(--primary-brend);
+    opacity: 1;
+    transform: translateY(100%);
+    color: var(--white);
 }
 
-.overlay-thumb::after {
+.text-overlay {
     transform: translateY(0%);
     display: inline-block;
     content: '';
@@ -592,10 +610,13 @@ a .list-mediafooter {
     padding-left: 32px;
 
     background-color: var(--primary-brend);
-    opacity: 1;
+    opacity: 0.3;
     transform: translateY(100%);
     color: var(--white);
-    
+    position: absolute;
+    transform: translateY(0);
+    transition: transform 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
 }
 
 .filter-link:hover,
@@ -603,7 +624,7 @@ a .list-mediafooter {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-.filter-link:hover .overlay-thumb::after {
+.filter-link:hover .overlay-thumb {
     transform: translateY(0);
     transition: transform 250ms var(--timing-function),
     opacity 250ms var(--timing-function);
@@ -620,6 +641,10 @@ a .list-mediafooter {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 2%;
+}
+
+.text-overlay {
+    
 }
 
 .team-text {
@@ -648,6 +673,7 @@ a .list-mediafooter {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 2%;
+    transition: color 250ms var(--timing-function);
 }
 
 .portfolio-text:nth-child(-n+3) {
@@ -690,7 +716,9 @@ outline: 2px solid tomato;
     width: 100%;
     height: 100%;
     border: 1px solid var(--subtle-text);
+    border-color: var(--subtle-text);
     border-radius: 4px;
+    transition: border-color 2500ms var(--timing-function);
 }
 
 .customer-link:hover,
@@ -702,6 +730,7 @@ outline: 2px solid tomato;
 
 .client {
     fill: var(--client);
+    transition: fill 250ms var(--timing-function);
 }
 
 .client:hover,
@@ -774,10 +803,20 @@ height: 40px;
     height: 40px;
     fill: var(--primary-brend);
     }
+    
+.icon-media {
+    fill: var(--primary-brend);
+    transform: fill 2500ms var(--timing-function);
+}
 
 .icon-media:hover,
 .icon-media:focus {
     fill: var(--pressed-state);
+}
+
+.icon-mediafooter {
+    fill:#FFFFFF1A;
+    transform: fill 2500ms var(--timing-function);
 }
 
 .icon-mediafooter:hover,
