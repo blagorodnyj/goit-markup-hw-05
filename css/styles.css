@@ -1057,3 +1057,11 @@ height: 40px;
 .modal-btn:focus {
     background-color: #404BBF;
 }
+
+.subscribe {
+    margin-left: auto;
+}
+
+.label-subscribe {
+    margin-right: 40px;
+}
