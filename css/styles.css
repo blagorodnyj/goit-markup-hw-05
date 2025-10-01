@@ -443,9 +443,11 @@ a .list-mediafooter {
 }
 
 .filter-link {
-    display: inline-block;
+    display: block;
     box-sizing: border-box;
     border: 1px solid transparent;
+    color: inherit;
+    text-decoration: none;
 }
 
 .filter-item {
@@ -545,7 +547,7 @@ a .list-mediafooter {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-.filter-item:nth last child(-n+3) {
+.filter-item:nth-last-child {
     margin-bottom: 0px;
 }
 
@@ -596,9 +598,9 @@ a .list-mediafooter {
     padding: 0px;
 }
 
-.portfolio-text {
+.portfolio-overlay-text {
 
-    color: var(--text);
+    color: #F4F4FD;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
@@ -609,9 +611,42 @@ a .list-mediafooter {
     margin-bottom: 0px;
 }
 
-.portfolio-text:hover {
-    color: var(--text);
+.portfolio-overlay-text:hover {
+    color: #F4F4FD';
 }
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0 */
+    background: #4D5AE5;
+    color: #F4F4FD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+/* end of portfolio */
 
 /*
 Fuckup check
@@ -1055,7 +1090,9 @@ height: 40px;
 
 .modal-btn:hover,
 .modal-btn:focus {
-    background-color: #404BBF;
+    color: var(--white);
+        background-color: var(--pressed-state);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .subscribe {
